@@ -24,7 +24,7 @@ public class ClientePJuri extends Cliente{
     @Override
     public void setNumDocu(String cnpj) {
         if (cnpj == null || cnpj.length() != 14) {
-            throw new IllegalArgumentException("CNPJ inválido: tamanho incorreto");
+            throw new IllegalArgumentException("CNPJ inválido");
         }
 
         int nSum = 0;
@@ -38,7 +38,7 @@ public class ClientePJuri extends Cliente{
         else pDigVer = 11 - pDigVer;
 
         if (pDigVer != Character.getNumericValue(cnpj.charAt(12))) {
-            throw new IllegalArgumentException("CNPJ inválido: primeiro dígito verificador incorreto");
+            throw new IllegalArgumentException("CNPJ inválido");
         }
 
         nSum = 0;
@@ -52,7 +52,7 @@ public class ClientePJuri extends Cliente{
         else sDigVer = 11 - sDigVer;
 
         if (sDigVer != Character.getNumericValue(cnpj.charAt(13))) {
-            throw new IllegalArgumentException("CNPJ inválido: segundo dígito verificador incorreto");
+            throw new IllegalArgumentException("CNPJ inválido");
         }
 
         // Formatação do CNPJ
