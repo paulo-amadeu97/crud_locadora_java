@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+import dao.ClienteDAO;
+import dao.PessoaDAO;
+import entidades.*;
 
 public class Main{
     public static void main(String[] args) {
@@ -22,7 +24,9 @@ public class Main{
             System.out.println(clienteTeste.fitasLocadas);
             ClientePJuri cliente2 = new ClientePJuri(pessoaTeste, "70673833000107");
 
-
+            PessoaDAO.getPessoas().stream().forEach(x -> System.out.println(x.toString()));
+            
+            ClienteDAO.save(cliente2);
         }catch (Exception e) {
             System.out.println(e);
         }
